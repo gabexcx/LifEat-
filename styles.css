@@ -1,0 +1,244 @@
+/* Definições Globais e Variáveis de Cores */
+:root {
+    --primary-green: #68b928; /* Verde principal */
+    --accent-orange: #ff9933; /* Laranja do destaque */
+    --feature-yellow: #fffac8; /* Amarelo suave dos cards de recurso */
+    --text-color: #333;
+    --light-cream: #f4f4f4; 
+}
+
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- 1. CONFIGURAÇÃO PRINCIPAL DO FUNDO (BODY) --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--light-cream);
+}
+
+/* --- 2. NAVEGAÇÃO (HEADER) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #ffcfa3; 
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    font-weight: 600;
+    position: relative;
+    z-index: 20; 
+}
+.logo {
+    display: flex;
+    align-items: center;
+    /* Remove o estilo de texto, pois agora é uma imagem */
+    font-size: 0; 
+    color: transparent;
+}
+
+/* Estilo para o Ícone Original (logo.png) */
+.logo-img-icon {
+    height: 30px; 
+    margin-right: 5px;
+}
+
+/* NOVO Estilo para a Imagem de Texto (Logotipo.png) */
+.logo-text-img {
+    height: 30px; /* Mantém a altura para alinhamento */
+    width: auto;
+}
+
+/* Os estilos .logo-img-secondary (da imagem Imagotipo1.jpg) foram removidos, 
+   pois você não a incluiu no HTML final. */
+
+.navbar nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.navbar nav a.active {
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.navbar nav a:hover {
+    color: var(--primary-green);
+}
+.auth-buttons a {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+.btn-signup {
+    background-color: var(--primary-green);
+    color: rgb(0, 0, 0);
+}
+.btn-login {
+    border: 1px solid var(--primary-green);
+    color: var(--primary-green);
+}
+.btn-login:hover, .btn-signup:hover {
+    opacity: 0.9;
+}
+
+
+/* --- 3. SEÇÃO PRINCIPAL (HERO) --- */
+.hero-section {
+    position: relative;
+    display: flex;
+    /* Conteúdo alinhado à esquerda */
+    justify-content: flex-start; 
+    min-height: calc(100vh - 60px); 
+    padding: 40px 0; 
+    
+    /* IMAGEM DE FUNDO */
+    background-image: url('background-vegetais.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* --- ÁREA DE CONTEÚDO (CONTENT AREA) --- */
+.content-area {
+    /* Fundo transparente */
+    background-color: transparent; 
+    
+    width: 100%; 
+    max-width: 650px;
+    
+    /* Posicionamento à esquerda */
+    margin: 0;
+    padding: 4px; 
+    padding-left: 200px; 
+
+    position: relative; 
+    z-index: 10; 
+    
+    box-shadow: none; 
+    align-self: flex-start; 
+}
+
+/* --- Estilização do Conteúdo (Texto) para Legibilidade --- */
+.main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem; 
+    line-height: 1.2;
+    margin-bottom: 40px;
+    font-weight: 400;
+    
+    /* Texto principal em BRANCO com sombra */
+    color: rgb(0, 0, 0); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.highlight-box {
+    background-color: var(--accent-orange);
+    color: rgb(0, 0, 0);
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    max-width: 450px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- Grid de Recursos --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    max-width: 500px;
+    margin-top: 40px;
+}
+.feature-card {
+    /* Mantém fundo sólido para legibilidade */
+    background-color: var(--feature-yellow); 
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color); 
+}
+/* No arquivo styles.css */
+
+/* --- Grid de Recursos --- */
+.features-grid {
+    /* ... código do grid ... */
+}
+
+/* ------------------------------------------------------------------- */
+/* CÓDIGO PARA CRIAR O EFEITO ESCADA (Deslocamento Horizontal Adicional) */
+/* ------------------------------------------------------------------- */
+.feature-card:nth-child(3) {
+    /* Move o 3º card 20 pixels para a direita */
+    transform: translateX(100px);
+}
+
+.feature-card:nth-child(4) {
+    /* Move o 4º card 40 pixels para a direita */
+    transform: translateX(100px);
+}
+/* ------------------------------------------------------------------- */
+
+/* ESTILO DOS ÍCONES PNG */
+.feature-icon {
+    width: 50px; 
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* --- 4. Responsividade --- */
+@media (max-width: 1024px) {
+    .content-area {
+        /* Garante que o conteúdo fique centrado em telas menores */
+        max-width: 100%;
+        padding: 50px 20px;
+        text-align: center;
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    .features-grid {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .main-title {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+    .navbar nav {
+        order: 3; 
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .main-title {
+        font-size: 2.8rem; 
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+}

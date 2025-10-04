@@ -1,0 +1,277 @@
+/* Importa as fontes customizadas do Google Fonts para serem usadas na página */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Define variáveis CSS globais para reutilizar cores facilmente */
+:root {
+    --page-bg: #FEFDFB; /* Cor para o fundo da página (creme bem claro) */
+    --form-bg: #D2ECA9; /* Cor do container do formulário */
+    --input-bg: #F6C282; /* Cor da barra de menu */
+    --button-accent: #ff6e6e; /* Cor de destaque para o botão "Cadastre-se" */
+    --link-color: #4A9091; /* Cor para o link de login (azul esverdeado) */
+    --text-color-dark: #333; /* Cor de texto principal (cinza escuro) */
+    --text-color-light: #555; /* Cor de texto secundário (cinza mais claro) */
+    --white: #fff; /* Cor branca */
+}
+
+/* Seletor universal (*): aplica estas regras a TODOS os elementos da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilização do corpo (<body>) da página */
+body {
+    background-color: var(--page-bg);
+    color: var(--text-color-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Estilização da barra de navegação (<header class="navbar">) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: var(--input-bg); /* COR ALTERADA */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilização da imagem do logo dentro da navbar */
+.navbar .logo img {
+    height: 70px;
+}
+
+/* Estilização da lista (<ul>) de links de navegação */
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Estilização dos links (<a>) dentro da lista de navegação */
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: 600; /* FONTE ALTERADA */
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+/* Estilização específica do botão Login" */
+.navbar .btn-cadastre-se {
+    background-color: var(--button-accent); /* COR ALTERADA */
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 600; /* FONTE ALTERADA */
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para quando o mouse passa por cima do botão "Cadastre-se" */
+.navbar .btn-cadastre-se:hover {
+    background-color: #e07171; /* Levemente escurecido */
+}
+
+/* Estilização específica do botão "Login" */
+.navbar .btn-login {
+    background-color: transparent;
+    border: 1px solid var(--text-color-dark);
+    color: var(--text-color-dark);
+    padding: 7px 18px;
+    border-radius: 5px;
+    font-weight: 600; /* FONTE ALTERADA */
+    transition: all 0.3s ease;
+}
+
+/* Estilo para quando o mouse passa por cima do botão "Login" */
+.navbar .btn-login:hover {
+    background-color: var(--text-color-dark);
+    color: var(--white);
+}
+
+/* Estilização da área de conteúdo principal (<main>) */
+.content-area {
+    display: flex;
+    flex-grow: 1;
+    align-items: stretch;
+}
+
+/* Estilização do container que envolve o formulário */
+.form-wrapper {
+    flex: 0.8; /* PROPORÇÃO ALTERADA */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    min-width: 500px;
+}
+
+/* Estilização do container verde do formulário */
+.signup-form-container {
+    background-color: var(--form-bg); /* COR ALTERADA */
+    padding: 40px 50px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilização do título "Login" (<h1>) */
+.signup-form-container h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-color-dark);
+    margin-bottom: 25px;
+}
+
+.login-form-container .subtitle {
+    text-align: center;         /* Alinha o texto ao centro */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;           /* Define a fonte Medium */
+    font-size: 1.1em;           /* Tamanho proporcional */
+    color: var(--text-color-light); /* Cor cinza claro */
+    margin-top: -15px;          /* Ajusta a proximidade com o título */
+    margin-bottom: 30px;        /* Espaço antes do primeiro campo */
+}
+
+/* Estilização do agrupador de campo do formulário (<div class="form-group">) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+/* Estilização dos rótulos (<label>) */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    /* CARACTERÍSTICAS ALTERADAS */
+    color: #000;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+/* Estilização compartilhada para todos os campos de entrada e seleção */
+.form-group input,
+.custom-select select {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background-color: #FFA93F78; /* COR ALTERADA */
+    border-radius: 25px;
+    font-size: 1em;
+    color: var(--text-color-dark);
+}
+
+/* Estilo para quando um campo está em foco (selecionado/clicado) */
+.form-group input:focus,
+.custom-select select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--link-color);
+}
+
+/* Estilização do container do seletor personalizado */
+.custom-select {
+    position: relative;
+}
+
+/* Estilização do seletor (<select>) para remover a aparência padrão */
+.custom-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+/* Estilização da seta customizada (<span>) */
+.custom-select .custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--text-color-light);
+    pointer-events: none;
+}
+
+/* Estilização do parágrafo do link de login */
+.login-link {
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    margin-top: -10px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* Estilização do link (<a>) dentro do parágrafo */
+.login-link a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Estilo para quando o mouse passa por cima do link */
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização do botão principal "Criar minha conta" */
+.btn-criar-conta {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #FFA93F; /* COR ALTERADA */
+    color: var(--text-color-dark);
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para quando o mouse passa por cima do botão */
+.btn-criar-conta:hover {
+    background-color: #e09435; /* Levemente escurecido */
+}
+
+/* Estilização do container da imagem à direita */
+.background-image {
+    flex: 1.5; /* PROPORÇÃO ALTERADA */
+    background-image: url('backgroundlogin.png'); /* **TROQUE O NOME DO ARQUIVO** */
+    background-size: contain; /* ENQUADRAMENTO ALTERADO */
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px; /* FORMATO ALTERADO */
+    margin: 40px 40px 40px 0; /* ESPAÇAMENTO ADICIONADO */
+    background-color: var(--page-bg);
+}
+
+/* Regras de Responsividade: aplicadas apenas quando a tela for menor que 992px */
+@media (max-width: 992px) {
+    /* Muda a direção do layout principal para coluna (um item embaixo do outro) */
+    .content-area {
+        flex-direction: column;
+    }
+    
+    /* Ajustes no container do formulário para telas menores */
+    .form-wrapper {
+        min-width: unset;
+        width: 100%;
+        padding: 30px;
+    }
+    
+    /* Esconde completamente a imagem de fundo em telas pequenas */
+    .background-image {
+        display: none;
+    }
+}

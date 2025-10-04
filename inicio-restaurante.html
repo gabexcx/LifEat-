@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiEat - O bem que você merece</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="inicio-restaurante.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="Imagotipo1.png" alt="LiEat Icone" class="logo-img-icon"> 
+            
+            <img src="Logotipo.png" alt="Logotipo LiEat" class="logo-text-img">
+        </div>
+        <nav>
+            <a href="inicio.html" class="active">Início</a>
+            <a href="sobre-nos.html">Sobre nós</a>
+            <a href="fale-conosco.html">Fale Conosco</a>
+        </nav>
+        <div class="welcome">
+            <div>Bem vindo, <b>Usuário</b></div>
+             <div>
+                <button class="hamburger" id="hamburger-btn"
+                    aria-label="Abrir menu" aria-controls="nav-links" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                </button>
+             </div>
+        </div>
+    </header>
+
+    <div class="side-menu">
+        <uL>
+            <li>🛠️ Gestão de Pedidos</li>
+            <li>🍽️ Cardápio / Produtos</li>
+            <li>💲 Financeiro</li>
+            <li>⚙️ Configurações do Restaurante</li>
+            <li>👤 Conta e Equipe</li>
+            <li>📢 Marketing</li>
+            <li>📞 Suporte e Ajuda</li>
+        </uL>
+    </div>
+
+    <div class="painel-section">
+        <div class="painel-adm">
+            <div class="painel-fila">
+                <h2>Fila de pedidos</h2>
+                <div class="novo-pedido">
+                    <h3>Exemplo de novo pedido</h3>
+                    <div class="acoes-novo-pedido">
+                        <a href="#" class="botao-pedido">
+                            Aceitar
+                        </a>
+                        <a href="#" id="botao-recusar" class="botao-pedido">
+                            Recusar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="linha-vertical"></div>
+            <div class="painel-pedidos">
+                <h2>Pedidos aceitos</h2>
+                <div class="pedido-aceito">
+                    <h3>Exemplo de novo pedido</h3>
+                    <div class="detalhes-pedido">
+                        <p>Hora do Pedido: 18:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <script src="script.js"></script>
+</body>
+</html>

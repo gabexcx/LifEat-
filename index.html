@@ -1,0 +1,78 @@
+<!DOCTYPE html> <html lang="pt-BR"> <head> 
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Cadastro - Lifeat</title> 
+      <link rel="stylesheet" href="stylecadastro.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    </head>
+
+<body> <header class="navbar"> 
+        <div class="logo">
+            <img src="logo.png" alt="Lifeat Logo">
+        </div>
+        <nav>
+            <ul>
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="sobre-nos.html">Sobre nós</a></li>
+            <li><a href="fale-conosco.html">Fale Conosco</a></li>
+            <li><a href="index.html" class="btn-cadastre-se">Cadastre-se</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="content-area">
+        <div class="form-wrapper">
+            <div class="signup-form-container">
+                <h1>Cadastre-se</h1>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="cadastroType">Qual tipo de Cadastro você deseja?</label>
+                        <div class="custom-select">
+                            <select id="cadastroType" name="cadastroType">
+                                <option value="">Selecione...</option> 
+                                <option value="usuario">Entregador</option> 
+                                <option value="nutricionista">Restaurante</option> 
+                                <option value="empresa">Cliente</option>
+                            </select>
+                            <span class="custom-arrow"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmSenha">Confirme sua Senha</label>
+                        <input type="password" id="confirmSenha" name="confirmSenha" required>
+                    </div>
+
+                    <p class="login-link">Já possui conta? <a href="login.html">Faça seu login aqui</a></p>
+
+                    <button type="submit" class="btn-criar-conta">Criar minha conta</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="background-image">
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

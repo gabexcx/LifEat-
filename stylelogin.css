@@ -1,0 +1,325 @@
+/* Importa as fontes customizadas do Google Fonts para serem usadas na página */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat+Alternates:wght@600&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Define variáveis CSS globais para reutilizar cores facilmente */
+:root {
+    --page-bg: #FEFDFB; /* Cor para o fundo da página (creme bem claro) */
+    --form-bg: #D2ECA9; /* Cor do container do formulário */
+    --input-bg: #F6C282; /* Cor da barra de menu */
+    --button-accent: #ff6e6e; /* Cor de destaque para o botão "Cadastre-se" */
+    --link-color: #4A9091; /* Cor para o link de login (azul esverdeado) */
+    --text-color-dark: #333; /* Cor de texto principal (cinza escuro) */
+    --text-color-light: #555; /* Cor de texto secundário (cinza mais claro) */
+    --white: #fff; /* Cor branca */
+}
+
+/* Seletor universal (*): aplica estas regras a TODOS os elementos da página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilização do corpo (<body>) da página */
+body {
+    background-color: var(--page-bg);
+    color: var(--text-color-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Estilização da barra de navegação (<header class="navbar">) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: var(--input-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilização da imagem do logo dentro da navbar */
+.navbar .logo img {
+    height: 70px;
+}
+
+/* Estilização da lista (<ul>) de links de navegação */
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Estilização dos links (<a>) dentro da lista de navegação */
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+/* Estilização específica do botão "Cadastre-se" */
+.navbar .btn-cadastre-se {
+    background-color: var(--button-accent);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .btn-cadastre-se:hover {
+    background-color: #e07171;
+}
+
+/* Estilização específica do botão "Login" */
+.navbar .btn-login {
+    background-color: transparent;
+    border: 1px solid var(--text-color-dark);
+    color: var(--text-color-dark);
+    padding: 7px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-login:hover {
+    background-color: var(--text-color-dark);
+    color: var(--white);
+}
+
+/* Estilização da área de conteúdo principal (<main>) */
+.content-area {
+    display: flex;
+    flex-grow: 1;
+    align-items: stretch;
+}
+
+/* Estilização do container que envolve o formulário */
+.form-wrapper {
+    flex: 0.7; /* Proporção ajustada para a imagem ficar maior */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px;
+    min-width: 500px;
+   
+}
+/* Estilização do container base do formulário */
+.signup-form-container {
+    background-color: var(--form-bg);
+    padding: 40px 50px 30px 50px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+   margin-top: 80px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.signup-form-container h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5em;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-color-dark);
+    margin-bottom: 25px;
+}
+
+
+/* --- ESTILOS ADICIONAIS E ESPECÍFICOS PARA O LOGIN --- */
+
+.login-form-container {
+    padding: 40px 50px 30px 50px;
+    max-width: 550px;
+}
+
+.login-form-container .subtitle {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: var(--text-color-light);
+    margin-top: -15px;
+    margin-bottom: 30px;
+}
+
+/* Estilização do agrupador de campo do formulário (<div class="form-group">) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilização dos rótulos (<label>) */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #000;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* Estilização compartilhada para todos os campos de entrada e seleção */
+.form-group input,
+.custom-select select {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background-color: #FFA93F78; /* COR ALTERADA */
+    border-radius: 25px;
+    font-size: 1em;
+    color: var(--text-color-dark);
+}
+
+
+.form-group input:focus,
+.custom-select select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--link-color);
+}
+
+.custom-select {
+    position: relative;
+}
+
+.custom-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.custom-select .custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--text-color-light);
+    pointer-events: none;
+}
+
+.form-options {
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.form-options .forgot-password {
+    font-size: 0.9em;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.form-options .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 17px; /* --- MUDANÇA AQUI --- Tamanho do texto aumentado */
+    color: var(--text-color-light);
+    cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label::before {
+    background-color: #FF4B4B;
+    border-color: #FF4B4B;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+
+.btn-entrar {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #FFA93F;
+    color: var(--text-color-dark);
+    border: none;
+    border-radius: 25px;
+    font-size: 1.3em; /* --- MUDANÇA AQUI --- Tamanho do botão aumentado */
+    font-weight: 600;
+    font-family: 'Montserrat Alternates', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-entrar:hover {
+    background-color: #e09435;
+}
+
+.separator {
+    border: none;
+    height: 1px;
+    background-color: #00000020;
+    margin: 25px 0;
+}
+
+.register-link {
+    text-align: center;
+    font-size: 0.95em;
+    color: var(--text-color-light);
+}
+
+.register-link a {
+    color: var(--link-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- IMAGEM DE FUNDO E RESPONSIVIDADE --- */
+
+.background-image {
+    flex: 1.6; /* --- MUDANÇA AQUI --- Proporção aumentada para a imagem ficar maior */
+    background-image: url('backgroundlogin.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 60px;
+    margin: 40px 40px 40px 0;
+    background-color: var(--page-bg);
+}
+
+@media (max-width: 992px) {
+    .content-area {
+        flex-direction: column;
+    }
+    
+    .form-wrapper {
+        min-width: unset;
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .background-image {
+        display: none;
+    }
+}

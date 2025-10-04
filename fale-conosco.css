@@ -1,0 +1,382 @@
+/* --- 1. Definição de Variáveis de Cores e Fontes --- */
+:root {
+    /* Cores Primárias da LiEat (Baseadas na imagem) */
+    --primary-green: #68b928; /* Verde escuro do cabeçalho e botão */
+    --secondary-green: #e6ffe6; /* Verde claro */
+    --light-yellow-bg: #fff8e3; /* Amarelo bem claro para campos e painel de contato */
+    --background-color-main: #fcf9f4; /* Fundo geral da página (quase branco/creme) */
+    
+    /* Cores de Texto */
+    --text-color: #333333; /* Texto principal escuro */
+    --light-text-color: #000000; /* Texto claro (para cabeçalhos) */
+    --medium-text-color: #555; /* Texto secundário */
+    
+    /* Fontes */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-handwritten: 'Dancing Script', cursive;
+}
+
+/* --- 2. Reset Básico e Estilização do Corpo --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color-main);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+/* --- 3. Estilização da Navbar (Cabeçalho) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: rgb(255, 204, 163);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 60px; /* Altura fixa */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-handwritten);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.logo-img {
+    height: 40px; /* Tamanho da imagem do logo */
+    margin-right: 8px;
+}
+
+/* Links de Navegação */
+nav a {
+    margin: 0 15px;
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+/* Botões de Autenticação (Cadastre-se e Login) */
+.auth-buttons a {
+    margin-left: 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-signup {
+    background-color: var(--primary-green);
+    color: var(--light-text-color);
+    border: 2px solid var(--primary-green);
+}
+
+.btn-signup:hover {
+    background-color: #3e8e41;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.btn-login:hover {
+    background-color: var(--primary-green);
+    color: var(--light-text-color);
+}
+
+
+/* --- 4. Estilos da Seção Fale Conosco (baseados no código original) --- */
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 60px); 
+    background-color: var(--background-color-main); 
+}
+
+/* Painel Superior (Verde Escuro - Primary Green) com a curva */
+.header-contact-panel {
+    background-color: var(--primary-green); 
+    padding: 80px 50px 120px; 
+    
+    /* Cria a curva no rodapé do painel */
+    border-bottom-left-radius: 50% 50px;
+    border-bottom-right-radius: 50% 50px;
+    
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 5;
+}
+
+.contact-title {
+    font-family: var(--font-handwritten);
+    font-size: 3.5rem;
+    color: var(--light-text-color); 
+    font-weight: 400;
+}
+
+.contact-subtitle {
+    color: var(--light-text-color);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* Painel de Conteúdo (Estrutura principal) */
+.form-content-panel {
+    flex-grow: 1; 
+    padding: 50px 10% 80px; 
+    position: relative;
+    margin-top: -80px; 
+    z-index: 10;
+}
+
+/* Estilização da Introdução e Imagem Superior */
+.intro-and-image-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.intro-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--medium-text-color);
+    padding-top: 20px; 
+}
+
+.decorative-image.top {
+    width: 40%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+}
+
+/* --- Estrutura da Grade de Contato (Formulário e Contatos Adicionais) --- */
+.contact-body-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; 
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Estilização dos inputs (fundo amarelo suave) */
+.contact-form input.input-styled,
+.contact-form textarea.input-styled {
+    width: 100%;
+    padding: 18px 15px; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    background-color: var(--light-yellow-bg); 
+    box-shadow: none;
+}
+
+.contact-form label {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 25px; 
+}
+
+/* Oculta o botão de submit */
+.btn-submit {
+    display: none; 
+}
+
+
+/* --- Estilização do Painel de Contatos Adicionais --- */
+.additional-contacts-panel {
+    background-color: var(--light-yellow-bg); 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.additional-contacts-panel h3 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--medium-text-color);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--primary-green); 
+}
+
+.contact-item.whatsapp {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-green); 
+    color: white;
+    border-radius: 20px; 
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-whatsapp:hover {
+    background-color: #2b8c00;
+}
+
+.contact-item.whatsapp i {
+    display: none; 
+}
+
+.decorative-image.bottom {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+}
+
+/* --- 5. Responsividade (Adaptada) --- */
+@media (max-width: 1024px) {
+    
+    /* Responsividade da Navbar */
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        order: 3; 
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
+
+    .auth-buttons {
+        order: 2;
+    }
+    
+    .auth-buttons a {
+        padding: 5px 10px;
+        margin-left: 5px;
+    }
+    
+    /* Responsividade da Grade de Contato */
+    .contact-body-grid {
+        grid-template-columns: 1fr; /* Colunas empilham-se */
+        gap: 60px;
+    }
+    
+    .intro-and-image-top {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .intro-text {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .decorative-image.top {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .form-content-panel {
+        padding: 30px 5% 50px;
+        margin-top: -60px;
+    }
+}
+/* Adicione este bloco no seu fale-conosco.css */
+.doubt-highlight-box {
+    /* Usa o verde principal para destaque */
+    background-color: var(--primary-green); 
+    color: white;
+    padding: 25px 40px;
+    border-radius: 40px; 
+    font-size: 1.5rem; 
+    font-weight: 700;
+    text-align: center;
+    max-width: 85%;
+    
+    /* ESTA É A LINHA QUE VOCÊ VAI AJUSTAR MANUALMENTE */
+    /* Formato: margin: [TOP] [RIGHT/LEFT] [BOTTOM]; */
+    margin: 200px auto 60px; 
+    
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .header-contact-panel {
+        padding: 60px 20px 100px;
+    }
+
+    .contact-title {
+        font-size: 2.5rem;
+    }
+}
